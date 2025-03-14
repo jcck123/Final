@@ -40,6 +40,50 @@
             background: rgba(0, 0, 0, 0.3);
             position: relative;
         }
+        .workflow {
+             display: flex;
+             justify-content: space-between;
+             position: relative;
+             margin-top: 15px;
+             padding: 10px 0;
+         }
+ 
+         .workflow::before {
+             content: '';
+             position: absolute;
+             top: 50%;
+             left: 10%;
+             right: 10%;
+             height: 2px;
+             background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+             z-index: 1;
+         }
+ 
+         .workflow-step {
+             background: rgba(0, 0, 0, 0.3);
+             border-radius: 50%;
+             width: 50px;
+             height: 50px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             position: relative;
+             z-index: 2;
+             border: 2px solid #00d2ff;
+         }
+ 
+         .workflow-labels {
+             display: flex;
+             justify-content: space-between;
+             margin-top: 10px;
+         }
+ 
+         .workflow-label {
+             width: 50px;
+             text-align: center;
+             font-size: 0.7rem;
+             color: #e0e0e0;
+         }
 
         h1 {
             font-size: 3.2rem;
@@ -126,7 +170,7 @@
         .graph-visualization {
             width: 100%;
             height: 100%;
-            background: url('/Users/jicongchuan/Desktop/neo.png') center/cover;
+            background: url('./neo.png') center/cover;
             border-radius: 8px;
             transition: all 0.3s ease;
         }
