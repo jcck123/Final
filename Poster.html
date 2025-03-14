@@ -117,7 +117,7 @@
 
         .graph-container {
             position: relative;
-            height: 250px;
+            height: 200px;
             margin-top: 10px;
             overflow: hidden;
             border-radius: 8px;
@@ -126,7 +126,7 @@
         .graph-visualization {
             width: 100%;
             height: 100%;
-            background: url('./neo.png') center/cover;
+            background: url('/Users/jicongchuan/Desktop/neo.png') center/cover;
             border-radius: 8px;
             transition: all 0.3s ease;
         }
@@ -156,49 +156,11 @@
             color: #b0b0b0;
         }
 
-        .workflow {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            margin-top: 15px;
-            padding: 10px 0;
-        }
-
-        .workflow::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-            z-index: 1;
-        }
-
-        .workflow-step {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-            border: 2px solid #00d2ff;
-        }
-
-        .workflow-labels {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
-        .workflow-label {
-            width: 50px;
-            text-align: center;
-            font-size: 0.7rem;
-            color: #e0e0e0;
+        .workflow-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         footer {
@@ -219,9 +181,92 @@
             border-radius: 5px;
         }
 
+        .tech-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .keyword {
+            background: rgba(0, 210, 255, 0.15);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .keyword:hover {
+            background: rgba(0, 210, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .keyword i {
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+
+        .screenshots-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .screenshot {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshot-caption {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .right-top {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .system-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .system-info-left, .system-info-right {
+            flex: 1;
+        }
+
+        .system-diagram {
+            max-height: 240px;
+            width: 100%;
+            object-fit: contain;
+        }
+
         @media (max-width: 1024px) {
             .content {
                 grid-template-columns: 1fr;
+            }
+            
+            .system-info {
+                flex-direction: column;
             }
         }
     </style>
@@ -258,17 +303,21 @@
             </div>
 
             <div class="panel">
-                <h2>Key Technologies</h2>
-                <ul>
-                    <li><strong>Knowledge Graph:</strong> Neo4j database storing medical data from CKCEST</li>
-                    <li><strong>Cross-lingual Support:</strong> Youdao translation API and BERT language model</li>
-                    <li><strong>Medical Entity Recognition:</strong> Named Entity Recognition (NER) for extracting
-                        medical terms
-                    </li>
-                    <li><strong>ICD Coding:</strong> International Classification of Diseases for term standardization
-                    </li>
-                    <li><strong>Evaluation:</strong> Tested with MedQuad medical QA dataset</li>
-                </ul>
+                <h2>Technical Keywords</h2>
+                <div class="tech-keywords">
+                    <div class="keyword"><i class="fas fa-project-diagram"></i>Neo4j</div>
+                    <div class="keyword"><i class="fas fa-brain"></i>BERT</div>
+                    <div class="keyword"><i class="fas fa-language"></i>NLP</div>
+                    <div class="keyword"><i class="fas fa-tag"></i>NER</div>
+                    <div class="keyword"><i class="fas fa-exchange-alt"></i>Cross-Lingual</div>
+                    <div class="keyword"><i class="fas fa-code-branch"></i>Knowledge Graph</div>
+                    <div class="keyword"><i class="fas fa-file-medical"></i>ICD Coding</div>
+                    <div class="keyword"><i class="fas fa-globe"></i>Youdao API</div>
+                    <div class="keyword"><i class="fas fa-database"></i>CKCEST</div>
+                    <div class="keyword"><i class="fas fa-question-circle"></i>MedQuad</div>
+                    <div class="keyword"><i class="fas fa-file-code"></i>Flask</div>
+                    <div class="keyword"><i class="fas fa-sync"></i>Bilingual Mapping</div>
+                </div>
             </div>
 
             <div class="panel">
